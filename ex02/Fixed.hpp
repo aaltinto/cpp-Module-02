@@ -26,8 +26,11 @@ class	Fixed
 		Fixed				&operator+(const Fixed &toCopy);
 		Fixed				&operator-(const Fixed &toCopy);
 		Fixed				&operator*(const Fixed &toCopy);
-		Fixed				&operator++(const Fixed &toCopy);
-		Fixed				&operator--(const Fixed &toCopy);
+		Fixed				&operator/(const Fixed &toCopy);
+		Fixed				&operator++(void);
+		Fixed				&operator++(int value);
+		Fixed				&operator--(void);
+		Fixed				&operator--(int value);
 
 		//member functions
 		float 				toFloat( void ) const;

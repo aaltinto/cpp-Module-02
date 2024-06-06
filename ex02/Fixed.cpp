@@ -107,14 +107,32 @@ Fixed  &Fixed::operator/(const Fixed &fp)
 	return *this;
 }
 
-Fixed  &Fixed::operator++(const Fixed &fp)
+Fixed  &Fixed::operator++(int value)
 {
-
+	if (!value)
+		value = 1;
+	this->_fixedPoint += value;
+	return *this;
 }
 
-Fixed  &Fixed::operator--(const Fixed &fp)
+Fixed  &Fixed::operator--(int value)
 {
+	if (!value)
+		value = 1;
+	this->setRawBits(this->toInt() + value);
+	return *this;
+}
 
+Fixed  &Fixed::operator++(void)
+{
+	this->_fixedPoint += 1;
+	return *this;
+}
+
+Fixed  &Fixed::operator--(void)
+{
+	this->_fixedPoint -= 1;
+	return *this;
 }
 
 std::ostream	&operator<<(std::ostream &os, const Fixed &fp)

@@ -17,6 +17,17 @@ class	Fixed
 
 		//operator overloads
 		Fixed				&operator=(const Fixed &toCopy);
+		bool				operator<(const Fixed &toCopy);
+		bool				operator>(const Fixed &toCopy);
+		bool				operator>=(const Fixed &toCopy);
+		bool				operator<=(const Fixed &toCopy);
+		bool				operator==(const Fixed &toCopy);
+		bool				operator!=(const Fixed &toCopy);
+		Fixed				&operator+(const Fixed &toCopy);
+		Fixed				&operator-(const Fixed &toCopy);
+		Fixed				&operator*(const Fixed &toCopy);
+		Fixed				&operator++(const Fixed &toCopy);
+		Fixed				&operator--(const Fixed &toCopy);
 
 		//member functions
 		float 				toFloat( void ) const;

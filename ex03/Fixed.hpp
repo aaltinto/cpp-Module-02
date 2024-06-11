@@ -25,10 +25,10 @@ class	Fixed
 		bool				operator<=(const Fixed &toCopy);
 		bool				operator==(const Fixed &toCopy);
 		bool				operator!=(const Fixed &toCopy);
-		Fixed				&operator+(const Fixed &toCopy) const;
-		Fixed				&operator-(const Fixed &toCopy);
-		Fixed				&operator*(const Fixed &toCopy);
-		Fixed				&operator/(const Fixed &toCopy);
+		Fixed				operator+(const Fixed &toCopy) const;
+		Fixed				operator-(const Fixed &toCopy);
+		Fixed				operator*(const Fixed &toCopy);
+		Fixed				operator/(const Fixed &toCopy);
 		Fixed				&operator++(void);
 		Fixed				&operator++(int value);
 		Fixed				&operator--(void);

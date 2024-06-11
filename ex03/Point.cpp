@@ -21,5 +21,25 @@ Point   &Point::operator=(Point const &point)
 {
     this->_x = point._x;
     this->_y = point._y;
+	return *this;
 }
 
+Fixed   Point::get_x() const
+{
+	return this->_x;
+}
+
+Fixed   Point::get_y() const
+{
+	return this->_y;
+}
+
+void    Point::set_x(Fixed x)
+{
+	this->_x = x;
+}
+
+void    Point::set_y(Fixed y)
+{
+	this->_y = y;
+}

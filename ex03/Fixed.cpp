@@ -86,25 +86,25 @@ bool  Fixed::operator!=(const Fixed &fp)
 		return (false);
 	return (true);
 }
-Fixed  &Fixed::operator+(const Fixed &fp) const
+Fixed  Fixed::operator+(const Fixed &fp) const
 {
 	Fixed tmp(*this);
     tmp.setRawBits(this->getRawBits() + fp.getRawBits());
     return tmp;
 }
-Fixed  &Fixed::operator-(const Fixed &fp)
+Fixed  Fixed::operator-(const Fixed &fp)
 {
 	Fixed tmp = *this;
 	tmp.setRawBits(this->getRawBits() - fp.getRawBits());
 	return tmp;
 }
-Fixed  &Fixed::operator*(const Fixed &fp)
+Fixed  Fixed::operator*(const Fixed &fp)
 {
 	Fixed tmp = *this;
 	tmp.setRawBits(this->getRawBits() * fp.getRawBits());
 	return tmp;
 }
-Fixed  &Fixed::operator/(const Fixed &fp)
+Fixed  Fixed::operator/(const Fixed &fp)
 {
 	Fixed tmp = *this;
 	tmp.setRawBits(this->getRawBits() / fp.getRawBits());

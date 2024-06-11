@@ -32,9 +32,9 @@ Fixed::Fixed(float const floatValue): _fixedPoint(floatValue * ft_pow(2, this->_
 {
 }
 
-Fixed::Fixed(Fixed const &toCopy) : _fixedPoint(toCopy._fixedPoint)
+Fixed::Fixed(Fixed const &toCopy)
 {
-
+	*this = toCopy;
 }
 
 Fixed::~Fixed(void)
@@ -86,25 +86,29 @@ bool  Fixed::operator!=(const Fixed &fp)
 		return (false);
 	return (true);
 }
-Fixed  &Fixed::operator+(const Fixed &fp)
+Fixed  Fixed::operator+(const Fixed &fp)
 {
-	this->_fixedPoint += fp._fixedPoint;
-	return *this;
+	Fixed tmp(*this);
+    tmp.setRawBits(this->getRawBits() + fp.getRawBits());
+    return tmp;
 }
-Fixed  &Fixed::operator-(const Fixed &fp)
+Fixed  Fixed::operator-(const Fixed &fp)
 {
-	this->_fixedPoint -= fp._fixedPoint;
-	return *this;
+	Fixed tmp = *this;
+	tmp.setRawBits(this->getRawBits() - fp.getRawBits());
+	return tmp;
 }
-Fixed  &Fixed::operator*(const Fixed &fp)
+Fixed  Fixed::operator*(const Fixed &fp)
 {
-	this->_fixedPoint *= fp._fixedPoint;
-	return *this;
+	Fixed tmp = *this;
+	tmp.setRawBits(this->getRawBits() * fp.getRawBits());
+	return tmp;
 }
-Fixed  &Fixed::operator/(const Fixed &fp)
+Fixed  Fixed::operator/(const Fixed &fp)
 {
-	this->_fixedPoint /= fp._fixedPoint;
-	return *this;
+	Fixed tmp = *this;
+	tmp.setRawBits(this->getRawBits() / fp.getRawBits());
+	return tmp;
 }
 
 Fixed  &Fixed::operator++(int value)

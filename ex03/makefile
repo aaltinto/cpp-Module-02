@@ -1,4 +1,4 @@
-SRC = Fixed.cpp main.cpp
+SRC = Fixed.cpp main.cpp bsp.cpp Point.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 RM = rm -f

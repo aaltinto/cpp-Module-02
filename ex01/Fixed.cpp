@@ -1,5 +1,6 @@
 #include "Fixed.hpp"
 #include <iostream>
+#include <cmath>
 
 static	float ft_pow(float base, int exp)
 {
@@ -30,7 +31,7 @@ Fixed::Fixed ( int const intValue): _fixedPoint(intValue * ft_pow(2, this->_frac
 	std::cout << "Int constructor called" <<std::endl;
 }
 
-Fixed::Fixed(float const floatValue): _fixedPoint(floatValue * ft_pow(2, this->_fractionalBits))
+Fixed::Fixed(float const floatValue): _fixedPoint(roundf(floatValue * ft_pow(2, this->_fractionalBits)))
 {
 	std::cout << "Float constructor called" <<std::endl;
 }
